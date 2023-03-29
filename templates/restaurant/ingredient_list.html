@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Ingredients List</h1>
+      <a style="float: right" href="{% url 'restaurant:ingredient-create' %}">Create</a>
+
+  {% if ingredient_list %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Dishes</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ingredient in ingredient_list %}
+          <tr>
+            <td>{{ ingredient.id }}</td>
+          <td><a href="{% url 'restaurant:ingredient-detail' pk=ingredient.id %}">{{ ingredient.name }}</a></td>
+            <td>
+              <ul>
+                {% for dish in ingredient.dishes.all %}
+                  <li>{{ dish.name }}</li>
+                {% endfor %}
+              </ul>
+            </td>
+            <td><a href="{% url 'restaurant:ingredient-update' pk=ingredient.id %}">Update</a></td>
+            <td><a href="{% url 'restaurant:ingredient-delete' pk=ingredient.id %}">Delete</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>There are no Ingredients in the service.</p>
+  {% endif %}
+{% endblock %}

@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Dish Types List
+    </h1>
+    <a style="float: right" href="{% url 'restaurant:dish-type-list-create' %}">Create</a>
+    {% if dish_type_list %}
+      <table class="table">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+
+        {% for dish_type in dish_type_list %}
+            <tr>
+              <td>
+                  {{ dish_type.id }}
+              </td>
+              <td>
+                  {{ dish_type.name }}
+              </td>
+              <td>
+                <a href="{% url 'restaurant:dish-type-list-update' pk=dish_type.id %}">Update</a>
+              </td>
+              <td>
+                <a href="{% url 'restaurant:dish-type-list-delete' pk=dish_type.id %}">Delete</a>
+              </td>
+          </tr>
+        {% endfor %}
+      </table>
+
+    {% else %}
+        <p>There are no Dish Types in the service.</p>
+    {% endif %}
+{% endblock %}
+

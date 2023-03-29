@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+  <h1> Dish: {{ dish.name }}, Dish Type: {{ dish.dish_type }}</h1>
+  <p>Cook who can prepare it</p>
+  <hr>
+  <ul>
+  {% for cook in dish.cooks.all %}
+  <li>{{ cook.username }}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+ <h1>Delete Dish Type</h1>
+  <p>Are you sure, that you want to delete this Dish Type: <h3>{{ dishtype }}</h3>
+
+  <form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Yes, delete" class="btn btn-danger">
+   <a href="{% url 'restaurant:dish-type-list' %}" class="btn btn-primary">Cancel</a>
+  </form>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% block content %}
+   {% if object|yesno:"Update Dish Type,New Dish Type" == "Update Dish Type" %}
+    <h1>Update Dish Type</h1>
+  {% else %}
+    <h1>New Dish Type</h1>
+  {% endif %}
+
+  <form action="" method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+
+    <input class="btn btn-primary" type="submit" value="submit">
+  </form>
+{% endblock %}
