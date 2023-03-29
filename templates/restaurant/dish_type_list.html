@@ -8,6 +8,7 @@
     <form action="" method="get" class="form-inline">
     {{ search_form|crispy }}
     <input class="btn btn-secondary" type="submit" value="🔍">
+    </form>
     {% if dish_type_list %}
       <table class="table">
         <tr>
@@ -23,7 +24,7 @@
                   {{ dish_type.id }}
               </td>
               <td>
-                  {{ dish_type.name }}
+                <a href="{% url 'restaurant:dish-type-list-detail' pk=dish_type.id %}">{{ dish_type.name }}</a>
               </td>
               <td>
                 <a href="{% url 'restaurant:dish-type-list-update' pk=dish_type.id %}">Update</a>
@@ -39,4 +40,3 @@
         <p>There are no Dish Types in the service.</p>
     {% endif %}
 {% endblock %}
-

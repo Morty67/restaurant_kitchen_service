@@ -9,6 +9,7 @@
     <form action="" method="get" class="form-inline">
   {{ search_form|crispy }}
   <input class="btn btn-secondary" type="submit" value="🔍">
+  </form>
     {% if cook_list %}
     <table class="table">
       <tr>
@@ -19,14 +20,19 @@
         <th>Years of experience</th>
       </tr>
     {% for cook in cook_list %}
-      <tr>
-        <td>{{ cook.id }}</td>
-        <td><a href="{% url 'restaurant:cook-detail' pk=cook.id %}">{{ cook.username }} {% if user == cook %} (Me){% endif %}</a></td>
-        <td>{{ cook.first_name }}</td>
-        <td>{{ cook.last_name }}</td>
-        <td>{{ cook.years_of_experience }}</td>
-      </tr>
-    {% endfor %}
+  <tr>
+    <td>{{ cook.id }}</td>
+    <td><a href="{% url 'restaurant:cook-detail' pk=cook.id %}">{{ cook.username }} {% if user == cook %}
+      (Me){% endif %}</a></td>
+    <td>{{ cook.first_name }}</td>
+    <td>{{ cook.last_name }}</td>
+    <td>
+      {% if cook.years_of_experience >= 1 %}
+        {{ cook.years_of_experience }}
+      {% endif %}
+    </td>
+  </tr>
+{% endfor %}
 
     </table>
     {% else %}
