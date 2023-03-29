@@ -17,7 +17,7 @@ class AdminCook(UserAdmin):
 
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
-    search_fields = ("name", "description", "ingredients")
+    search_fields = ("name", "description", "ingredients__name")
     list_display = ("name", "dish_type", "price")
     list_filter = ("dish_type",)
     prefetch_related = ("ingredients", "cooks")

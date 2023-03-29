@@ -11,10 +11,14 @@ from restaurant.forms import (
     SearchForm,
 )
 
-from restaurant.models import Cook, DishType, Dish, Ingredient
+from restaurant.models import (
+    Cook,
+    DishType,
+    Dish,
+    Ingredient,
+)
 
 
-# Create your views here.
 @login_required
 def index(request):
     """View function for the home page of the site."""
