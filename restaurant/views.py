@@ -9,6 +9,7 @@ from restaurant.forms import (
     CookCreationForm,
     CookSearchForm,
     SearchForm,
+    CookExperienceUpdateForm,
 )
 
 from restaurant.models import (
@@ -173,6 +174,17 @@ class CookDetailView(LoginRequiredMixin, generic.DetailView):
 class CookCreateView(LoginRequiredMixin, generic.CreateView):
     model = Cook
     form_class = CookCreationForm
+    success_url = reverse_lazy("restaurant:cook-list")
+
+
+class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Cook
+    success_url = reverse_lazy("")
+
+
+class CookExperienceUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Cook
+    form_class = CookExperienceUpdateForm
     success_url = reverse_lazy("restaurant:cook-list")
 
 
