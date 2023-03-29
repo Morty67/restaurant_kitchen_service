@@ -18,7 +18,8 @@ from restaurant.views import (
     IngredientDetailView,
     IngredientCreateView,
     IngredientDeleteView,
-    IngredientUpdateView, CookCreateView,
+    IngredientUpdateView,
+    CookCreateView,
 
 )
 
