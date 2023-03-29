@@ -22,6 +22,7 @@ from restaurant.views import (
     IngredientCreateView,
     IngredientDeleteView,
     IngredientUpdateView,
+    toggle_assign_to_dish,
 )
 
 urlpatterns = [
@@ -76,6 +77,11 @@ urlpatterns = [
          DishDeleteView.as_view(),
          name="dish-delete"
          ),
+    path(
+        "dish/<int:pk>/toggle-assign/",
+        toggle_assign_to_dish,
+        name="toggle-dish-assign",
+    ),
     path("ingredients/", IngredientListView.as_view(), name="ingredient-list"),
     path("ingredients/<int:pk>/",
          IngredientDetailView.as_view(),

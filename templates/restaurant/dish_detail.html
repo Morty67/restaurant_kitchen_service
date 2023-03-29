@@ -2,11 +2,21 @@
 
 {% block content %}
   <h1> Dish: {{ dish.name }}, Dish Type: {{ dish.dish_type }}</h1>
-  <p>Cook who can prepare it</p>
+  <h3>Cook who can prepare it</h3>
   <hr>
   <ul>
   {% for cook in dish.cooks.all %}
   <li>{{ cook.username }}</li>
   {% endfor %}
+  <h3>You can take on this dish or remove your profile from this dish</h3>
+  {% if request.user in dish.cooks.all %}
+      <a href="{% url 'restaurant:toggle-dish-assign' pk=dish.id %}" class="btn btn-danger link-to-page">
+        Remove me from cooking this dish.
+      </a>
+    {% else %}
+      <a href="{% url 'restaurant:toggle-dish-assign' pk=dish.id %}" class="btn btn-success link-to-page">
+        Assign me to prepare this dish.
+      </a>
+    {% endif %}
   </ul>
 {% endblock %}
