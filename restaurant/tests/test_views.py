@@ -1,8 +1,8 @@
 from django.contrib.auth import get_user_model
-from django.test import TestCase
+from django.test import TestCase, Client
 from django.urls import reverse
 
-from restaurant.models import DishType
+from restaurant.models import DishType, Cook, Dish
 
 DISH_TYPE = reverse("restaurant:dish-type-list")
 DISH_URL = reverse("restaurant:dish-list")
@@ -72,3 +72,40 @@ class PrivateCookTest(TestCase):
             list(res.context["dish_type_list"]),
             list(dish_type)
         )
+
+
+class CookToggleAssignToDishTestCase(TestCase):
+    """This test case checks whether a cook can be assigned to a dish and then
+    removed from it by toggling a button on a web page. The test logs
+    in a cook, asserts that the cook is not assigned to the dish, then posts
+    a request to toggle the cook's assignment to the dish, and asserts that the
+    cook is now assigned to the dish."""
+    def setUp(self):
+        self.client = Client()
+        self.cook = get_user_model().objects.create_user(
+            username="cook",
+            password="cook12345",
+            years_of_experience=2,
+        )
+        self.dish_type = DishType.objects.create(
+            name="Soup"
+        )
+        self.dish = Dish.objects.create(
+            name="Borsh",
+            price="14.43",
+            dish_type=self.dish_type,
+        )
+        self.url = reverse(
+            "restaurant:toggle-dish-assign",
+            args=[self.dish.id]
+        )
+
+    def test_toggle_assign_to_dish(self):
+        self.client.force_login(self.cook)
+        self.assertTrue(self.dish not in self.cook.dishes.all())
+        response = self.client.post(self.url)
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(self.dish in self.cook.dishes.all())
+        response = self.client.post(self.url)
+        self.assertEqual(response.status_code, 302)
+        self.assertTrue(self.dish not in self.cook.dishes.all())
