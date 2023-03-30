@@ -42,7 +42,7 @@
                 </a>
               </td>
               <td>
-                <form action="{% url 'restaurant:dish-type-list-delete' pk=dish_type.id %}" method="POST">
+                <form action="{% url 'restaurant:dish-type-list-delete' pk=dish_type.id %}" method="get">
                   {% csrf_token %}
                   <button type="submit" class="btn btn-danger btn-sm">
                     <i class="bi bi-trash"></i>
