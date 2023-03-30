@@ -24,7 +24,7 @@
             <ul class="navbar-nav navbar-nav-hover ms-lg-12 ps-lg-5 w-100">
               <li class="nav-item dropdown dropdown-hover mx-2">
                 <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                   href="javascript:;" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+                   href="javascript:" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
                   List of cooks
                   <img src="{% static 'img/down-arrow-dark.svg' %}" alt="down-arrow" class="arrow ms-1"/>
                 </a>
@@ -72,11 +72,13 @@
                         <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
                         </div>
                       </li>
+                    </div>
+                  </div>
                 </ul>
               </li>
-               <li class="nav-item dropdown dropdown-hover mx-2">
+              <li class="nav-item dropdown dropdown-hover mx-2">
                 <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                   href="javascript:;" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+                   href="javascript:" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
                   Types of Dishes
                   <img src="{% static 'img/down-arrow-dark.svg' %}" alt="down-arrow" class="arrow ms-1"/>
                 </a>
@@ -124,11 +126,13 @@
                         <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
                         </div>
                       </li>
+                    </div>
+                  </div>
                 </ul>
               </li>
-               <li class="nav-item dropdown dropdown-hover mx-2">
+              <li class="nav-item dropdown dropdown-hover mx-2">
                 <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                   href="javascript:;" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+                   href="javascript:" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
                   Dishes
                   <img src="{% static 'img/down-arrow-dark.svg' %}" alt="down-arrow" class="arrow ms-1"/>
                 </a>
@@ -176,11 +180,13 @@
                         <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
                         </div>
                       </li>
+                    </div>
+                  </div>
                 </ul>
               </li>
               <li class="nav-item dropdown dropdown-hover mx-2">
                 <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
-                   href="javascript:;" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+                   href="javascript:" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
                   Ingredients
                   <img src="{% static 'img/down-arrow-dark.svg' %}" alt="down-arrow" class="arrow ms-1"/>
                 </a>
@@ -228,6 +234,8 @@
                         <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
                         </div>
                       </li>
+                    </div>
+                  </div>
                 </ul>
               </li>
               {% if request.user.is_authenticated %}
@@ -253,6 +261,7 @@
                 <a href="https://github.com/Morty67" target="_blank"
                    class="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1 mt-2 mt-md-0">my github</a>
               </li>
+            </ul>
           </div>
         </div>
       </nav>
