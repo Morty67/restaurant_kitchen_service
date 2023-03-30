@@ -1,9 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1> Dish Type: {{dish_type_list }}</h1>
-  <p>Cook who can prepare it</p>
-  <hr>
-  <ul>
-  </ul>
+  <div class="container py-5">
+    <h1 class="mb-4">Dish Type: {{ dish_type_list }}</h1>
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Cook who can prepare it</h2>
+        <hr>
+        <ul class="list-group">
+          {% for cook in cooks %}
+            <li class="list-group-item">{{ cook.name }} ({{ cook.email }})</li>
+          {% empty %}
+            <li class="list-group-item">No cooks found.</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="mt-5">
+        <a href="{% url 'restaurant:dish-type-list' %}" class="btn btn-primary">Back to list of Type of Dishes</a>
+      </div>
+    </div>
+  </div>
 {% endblock %}
