@@ -1,24 +1,40 @@
-{% extends "base.html" %}
+{% extends 'base_background.html' %}
 {% load crispy_forms_filters %}
 {% load crispy_forms_tags %}
-{% block content %}
-<div class="content-section">
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Restaurant Kitchen Service!</legend>
-            {{ form|crispy }}
-        </fieldset>
-        <button class="btn btn-outline-info" type="submit">
-            Sign Up
-        </button>
-    </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Already Have An Account?
-            <a href="#" class="ml-2">SIGN IN</a>
-        </small>
-    </div>
 
+{% block content %}
+
+<div class="content-section">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Restaurant Kitchen Service!</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <button class="btn btn-primary btn-block" type="submit">
+                    Sign Up
+                </button>
+            </form>
+        </div>
+    </div>
 </div>
-{% endblock content %}
+<style>
+legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+form .form-group label {
+    font-weight: bold;
+}
+form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.content-section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+</style>
+{% endblock %}
