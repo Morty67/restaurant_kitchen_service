@@ -1,36 +1,60 @@
 {% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>
-    Username: {{ cook.username }}
-  </h1>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow">
+          <div class="card-header">
+            <h1 class="card-title mb-0 text-dark">Username: {{ cook.username }}</h1>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title mb-3 text-dark">Cook Information</h4>
+            <p class="card-text text-dark"><strong>First name:</strong> {{ cook.first_name }}</p>
+            <p class="card-text text-dark"><strong>Last name:</strong> {{ cook.last_name }}</p>
+            <p class="card-text text-dark"><strong>Years of experience:</strong> {{ cook.years_of_experience }}</p>
+            <p class="card-text text-dark"><strong>Is staff:</strong> {{ cook.is_staff }}</p>
+          </div>
+          <div class="card-footer">
+            <a href="{% url 'restaurant:cook-delete' pk=cook.id %}" class="btn btn-danger me-3">
+              Delete
+            </a>
 
-  <p><strong>First name:</strong> {{ cook.first_name }}</p>
-  <p><strong>Last name:</strong> {{ cook.last_name }}</p>
-  <p><strong>Years of experience:</strong> {{ cook.years_of_experience }}</p>
-  <p><strong>Is staff:</strong> {{ cook.is_staff }}</p>
+            <a href="{% url 'restaurant:cook-update' pk=cook.id %}" class="btn btn-secondary">
+              Update years of experience
+            </a>
+            <a href="{% url 'restaurant:cook-list' %}" class="btn btn-primary">Back to list of Cooks</a>
 
-    <a href="{% url 'restaurant:cook-delete' pk=cook.id %}" class="btn btn-danger link-to-page">
-      Delete
-    </a>
-
-    <a href="{% url 'restaurant:cook-update' pk=cook.id %}" class="btn btn-secondary link-to-page">
-      Update years of experience
-    </a>
-
-  <div class="ml-3">
-    <h4>Dishes</h4>
-
-    {% for dish in cook.dishes.all %}
-        <hr>
-        <p><strong>Name:</strong> {{ dish.name }}</p>
-        <p><strong>Description:</strong> {{ dish.description }}</p>
-        <p><strong>Price:</strong> {{ dish.price }}</p>
-        <p><strong>Type:</strong> {{ dish.dish_type.name }}</p>
-        <p class="text-muted"><strong>Id:</strong> {{ dish.id }}</p>
-
-    {% empty %}
-      <p>No dishes!</p>
-    {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-lg-8">
+        <div class="card shadow">
+          <div class="card-body">
+            <h4 class="card-title mb-3 text-dark">Dishes</h4>
+            {% for dish in cook.dishes.all %}
+              <hr class="mb-4">
+              <div class="row">
+                <div class="col-8">
+                  <h5 class="card-title mb-2 text-dark">{{ dish.name }}</h5>
+                  <p class="card-text text-dark">{{ dish.description }}</p>
+                  <p class="card-text text-dark"><strong>Price:</strong> {{ dish.price }}</p>
+                  <p class="card-text text-dark"><strong>Type:</strong> {{ dish.dish_type.name }}</p>
+                </div>
+                <div class="col-4">
+                  <p class="text-muted text-dark"><strong>Id:</strong> {{ dish.id }}</p>
+                </div>
+              </div>
+            {% empty %}
+              <p class="card-text text-dark">No dishes!</p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}
