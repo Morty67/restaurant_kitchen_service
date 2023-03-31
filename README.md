@@ -21,7 +21,7 @@ python manage.py runserver
 *  Create and manage chef profiles
 *  Create and manage food types
 *  Create and manage dishes
-* Create and manage ingredients for dishes
+*  Create and manage ingredients for dishes
 *  Assign chefs to specific dishes
 
 ## Demo
