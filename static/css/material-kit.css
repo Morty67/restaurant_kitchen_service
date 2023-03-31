@@ -10292,14 +10292,16 @@ fieldset:disabled .btn {
 
 .ps-1 {
   padding-left: 0.25rem !important;
+
 }
 
 .ps-2 {
   padding-left: 0.5rem !important;
+
 }
 
 .ps-3 {
-  padding-left: 1rem !important;
+  padding-left: 0.5rem !important;
 }
 
 .ps-4 {
@@ -10546,7 +10548,7 @@ fieldset:disabled .btn {
 }
 
 .text-white {
-  color: #fff !important;
+  color: beige !important;
 }
 
 .text-body {
@@ -20460,7 +20462,7 @@ fieldset:disabled .btn {
 
 .btn-primary,
 .btn.bg-gradient-primary {
-  box-shadow: 0 3px 3px 0 rgba(233, 30, 99, 0.15), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.15);
+  box-shadow: 0 3px 3px 0 rgba(15, 7, 236, 0.15), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.15);
 }
 
 .btn-primary:hover,
@@ -20856,7 +20858,7 @@ fieldset:disabled .btn {
 
 .btn-primary,
 .btn.bg-gradient-primary {
-  color: #fff;
+  color: blue;
 }
 
 .btn-primary:hover,
@@ -22454,10 +22456,10 @@ body.dark-version {
 
 label,
 .form-label {
-  font-size: 0.875rem;
-  font-weight: 400;
+  font-size: 1rem;
+  font-weight: 300;
   margin-bottom: 0.5rem;
-  color: #7b809a;
+  color: black;
   margin-left: 0.25rem;
 }
 
@@ -22469,7 +22471,7 @@ label,
 }
 
 .form-control {
-  border: none;
+  border: darkcyan;
 }
 
 .form-control.is-invalid {
@@ -23181,14 +23183,14 @@ hr.horizontal.gray-light {
 }
 
 .navbar .navbar-brand {
-  color: #344767;
+  color: darkcyan;
   font-size: 0.875rem;
 }
 
 .navbar .nav-link {
-  color: #344767;
+  color: darkcyan;
   padding: 0.5rem 1rem;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 0.875rem;
 }
 
