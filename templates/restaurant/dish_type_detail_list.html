@@ -5,13 +5,15 @@
     <h1 class="mb-4">Dish Type: {{ dish_type_list }}</h1>
     <div class="row">
       <div class="col-md-8">
-        <h2>Cook who can prepare it</h2>
+        <h2>Dishes of this type</h2>
         <hr>
         <ul class="list-group">
-          {% for cook in cooks %}
-            <li class="list-group-item">{{ cook.name }} ({{ cook.email }})</li>
+          {% for dish in dish_type_list.dish_set.all %}
+            <a href="{% url 'restaurant:dish-detail' pk=dish.id %}">
+              <li class="list-group-item">{{ dish.name }} ({{ dish.price }})</li>
+            </a>
           {% empty %}
-            <li class="list-group-item">No cooks found.</li>
+            <li class="list-group-item">No dishes found.</li>
           {% endfor %}
         </ul>
       </div>

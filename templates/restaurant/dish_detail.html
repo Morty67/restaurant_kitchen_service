@@ -8,6 +8,7 @@
         <h3 class="mb-3">Dish Type: {{ dish.dish_type }}</h3>
         <hr class="mb-4">
         <ul class="list-unstyled">
+        <h3>The cook who can prepare this dish:</h3>
           {% for cook in dish.cooks.all %}
             <li>{{ cook.username }}</li>
           {% endfor %}
