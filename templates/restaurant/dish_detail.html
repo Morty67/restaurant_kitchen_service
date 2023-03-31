@@ -8,11 +8,19 @@
         <h3 class="mb-3">Dish Type: {{ dish.dish_type }}</h3>
         <hr class="mb-4">
         <ul class="list-unstyled">
-        <h3>The cook who can prepare this dish:</h3>
+          <a href="{% url 'restaurant:dish-update' pk=dish.id %}" class="btn btn-danger link-to-page mb-4">
+            Update
+          </a>
+          <h3>The cook who can prepare this dish:</h3>
           {% for cook in dish.cooks.all %}
             <li>{{ cook.username }}</li>
           {% endfor %}
+        <h3>Ingredients needed for this dish:</h3>
+          {% for ingredient in dish.ingredients.all %}
+            <li>{{ ingredient.name }}</li>
+          {% endfor %}
           <hr class="mb-4">
+
           <h3 class="mb-3">You can take on this dish or remove your profile from this dish</h3>
           {% if request.user in dish.cooks.all %}
             <a href="{% url 'restaurant:toggle-dish-assign' pk=dish.id %}" class="btn btn-danger link-to-page mb-4">
@@ -25,7 +33,7 @@
           {% endif %}
         </ul>
         <div class="mt-5">
-          <a href="{% url 'restaurant:dish-list' %}" class="btn btn-primary">Back to list of Dishes</a>
+          <a href="{% url 'restaurant:dish-list' %}" class="btn btn-danger link-to-page mb-4">Back to list of Dishes</a>
         </div>
       </div>
     </div>

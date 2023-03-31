@@ -3,7 +3,9 @@
 {% block content %}
   <div class="container py-5">
     <h1>Ingredient Detail: {{ ingredient }}</h1>
-    <hr>
+    <a href="{% url 'restaurant:ingredient-update' pk=ingredient.id %}" class="btn btn-danger link-to-page mb-4">
+      Update
+    </a>
 
     <h2>Dishes that use {{ ingredient }}:</h2>
     <ul>

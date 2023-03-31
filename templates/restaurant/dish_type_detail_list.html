@@ -5,6 +5,9 @@
     <h1 class="mb-4">Dish Type: {{ dish_type_list }}</h1>
     <div class="row">
       <div class="col-md-8">
+                <a href="{% url 'restaurant:dish-type-list-update' pk=dish_type_list.id %}" class="btn btn-danger link-to-page mb-4">
+            Update
+          </a>
         <h2>Dishes of this type</h2>
         <hr>
         <ul class="list-group">
