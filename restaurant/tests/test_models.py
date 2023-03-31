@@ -18,7 +18,7 @@ class ModelsTests(TestCase):
         )
         self.assertEqual(str(cook),
                          f"Username: {cook.username}, (Name: {cook.first_name}"
-                         f"Surname: {cook.last_name})"
+                         f" Surname: {cook.last_name})"
                          )
 
     def test_dish_type_str(self):

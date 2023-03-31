@@ -14,7 +14,7 @@ class Cook(AbstractUser):
 
     def __str__(self) -> str:
         return (f"Username: {self.username}, (Name: {self.first_name}"
-                f"Surname: {self.last_name})"
+                f" Surname: {self.last_name})"
                 )
 
     def get_absolute_url(self):
