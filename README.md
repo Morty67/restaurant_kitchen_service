@@ -31,6 +31,6 @@ python manage.py runserver
 ![demo.png](demo.png)
 ![main2.png](main2.png)
 ![new_cook.png](new_cook.png)
-![list_types.png](list_types.png)
+![list_cooks](list_cooks.png)
 ![admin.png](admin.png)
 
