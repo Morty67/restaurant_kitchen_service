@@ -10,7 +10,7 @@
             <form method="POST">
                 {% csrf_token %}
                 <fieldset class="form-group">
-                    <legend class="border-bottom mb-4">Restaurant Kitchen Service!</legend>
+                    <legend class="border-bottom mb-4 text-primary text-center">Restaurant Kitchen Service!</legend>
                     {{ form|crispy }}
                 </fieldset>
                 <button class="btn btn-primary btn-block" type="submit">
@@ -20,21 +20,55 @@
         </div>
     </div>
 </div>
+
 <style>
-legend {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-form .form-group label {
-    font-weight: bold;
-}
-form .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-.content-section {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-}
+    body {
+        background-image: url('/static/img/login_back.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    form .form-group label {
+        font-weight: bold;
+    }
+
+    form .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .content-section {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+
+    /* Bootstrap styles for button */
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+
+    .btn-primary:focus, .btn-primary.focus {
+        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    }
+
+    .btn-primary.disabled, .btn-primary:disabled {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled):active,
+    .btn-primary:not(:disabled):not(.disabled).active,
+    .show > .btn-primary.dropdown-toggle {
+        background-color: #0062cc;
+        border-color: #005cbf;
+    }
 </style>
 {% endblock %}

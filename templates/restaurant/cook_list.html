@@ -3,52 +3,64 @@
 {% load crispy_forms_filters %}
 {% block content %}
   <body class="bg-image">
-  <div class="d-flex justify-content-center">
-    <h1>List of chefs</h1>
-  </div>
-  <a href="{% url 'restaurant:cook-create' %}" class="btn btn-primary float-right mt-2">
-    <span class="text-white">Create a new cook</span>
-  </a>
-    <form action="" method="get" class="form-inline mb-4">
-      <div class="input-group">
-        {{ search_form|crispy }}
-        <div class="input-group-append">
-          <button type="submit" class="btn btn-secondary">
-            <i class="bi bi-search"></i>
-          </button>
-        </div>
+  <div class="container">
+    <h1 class="text-center">List of chefs</h1>
+    <div class="row mb-3">
+      <div class="col-12 col-md-6">
+        <a href="{% url 'restaurant:cook-create' %}" class="btn btn-primary">
+          <span class="text-white">Create a new cook</span>
+        </a>
       </div>
-    </form>
-  {% if cook_list %}
-    <table class="table">
-      <tr>
-        <th>ID</th>
-        <th>Username</th>
-        <th>First name</th>
-        <th>Last name</th>
-        <th>Years of experience</th>
-      </tr>
-      {% for cook in cook_list %}
-        <tr>
-          <td>{{ cook.id }}</td>
-          <td>
-            <a href="{% url 'restaurant:cook-detail' pk=cook.id %}">
-              {{ cook.username }}
-              {% if user == cook %}(Me){% endif %}
-            </a>
-          </td>
-          <td>{{ cook.first_name }}</td>
-          <td>{{ cook.last_name }}</td>
-          <td>
-            {% if cook.years_of_experience >= 1 %}
-              {{ cook.years_of_experience }}
-            {% endif %}
-          </td>
-        </tr>
-      {% endfor %}
-    </table>
-  {% else %}
-    <p>There are no cooks in the service.</p>
-  {% endif %}
+      <div class="col-12 col-md-6">
+        <form action="" method="get" class="form-inline float-md-right">
+          <div class="input-group">
+            {{ search_form|crispy }}
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-secondary">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    {% if cook_list %}
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Years of experience</th>
+          </tr>
+          </thead>
+          <tbody>
+          {% for cook in cook_list %}
+            <tr>
+              <td>{{ cook.id }}</td>
+              <td>
+                <a href="{% url 'restaurant:cook-detail' pk=cook.id %}">
+                  {{ cook.username }}
+                  {% if user == cook %}(Me){% endif %}
+                </a>
+              </td>
+              <td>{{ cook.first_name }}</td>
+              <td>{{ cook.last_name }}</td>
+              <td>
+                {% if cook.years_of_experience >= 1 %}
+                  {{ cook.years_of_experience }}
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% else %}
+      <p class="text-center">There are no cooks in the service.</p>
+    {% endif %}
+  </div>
   </body>
 {% endblock %}
