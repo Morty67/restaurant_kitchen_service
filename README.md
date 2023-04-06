@@ -17,6 +17,7 @@ python -m venv venv
 venv\Scripts\activate (on Windows)
 source venv/bin/activate (on macOS)
 pip install -r requirements.txt
+python manage.py migrate
 python manage.py runserver
 ```
 ## Features:
@@ -29,8 +30,7 @@ python manage.py runserver
 
 ## Demo
 ![demo.png](demo.png)
-![main2.png](main2.png)
+![demo2.png](demo2.png)
 ![new_cook.png](new_cook.png)
 ![list_cooks](list_cooks.png)
 ![admin.png](admin.png)
-
