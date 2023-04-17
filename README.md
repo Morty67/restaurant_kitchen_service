@@ -1,12 +1,13 @@
 # Restaurant Kitchen Service Project
-# Account for using the application:
-*  login: example
-* password: First1996
-
 Restaurant Kitchen Service is a web application that enables restaurant managers to manage chef profiles,
 food types, dishes, and ingredients for dishes. Chefs can choose the dishes they want to prepare, or the manager can 
 assign them to specific dishes.
 [Restaurant Kitchen Service Project deployed to render](https://restaurant-service-mate.onrender.com/)
+
+# Account for using the application:
+*  login: example
+* password: First1996
+
 
 ## Installing / Getting started:
 ```shell
