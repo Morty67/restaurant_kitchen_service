@@ -8,7 +8,7 @@
       <h1>List of dishes</h1>
     </div>
     <div class="d-flex justify-content-end mb-4">
-      <a href="{% url 'restaurant:dish-create' %}" class="btn btn-primary btn-lg">Create</a>
+      <a href="{% url 'restaurant:dish-create' %}" class="btn btn-primary text-white">Add New Dish</a>
     </div>
     <form action="" method="get" class="form-inline mb-4">
       <div class="input-group">
@@ -27,7 +27,7 @@
           <tr>
             <th>ID</th>
             <th>Name</th>
-            <th class="text-center">Update</th>
+            <th class="text-center">Edit</th>
             <th class="text-center">Delete</th>
           </tr>
           </thead>
@@ -41,8 +41,9 @@
                 </a>
               </td>
               <td class="text-center">
-                <a href="{% url 'restaurant:dish-update' pk=dish.pk %}" class="btn btn-primary btn-sm">
-                  <i class="bi bi-pencil"></i> Edit
+                <a href="{% url 'restaurant:dish-update' pk=dish.id %}"
+                   class="btn btn-primary btn-sm text-white">
+                  Edit
                 </a>
               </td>
               <td class="text-center">

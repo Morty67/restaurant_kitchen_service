@@ -5,8 +5,9 @@
   <div class="container py-5">
     <h1 class="text-center mb-4">List of Dish Types</h1>
     <div class="d-flex justify-content-end mb-4">
-      <a href="{% url 'restaurant:dish-type-list-create' %}" class="btn btn-primary">Add New Dish Type</a>
+      <a href="{% url 'restaurant:dish-type-list-create' %}" class="btn btn-primary text-white">Add New Dish Type</a>
     </div>
+</div>
     <form action="" method="get" class="form-inline mb-4">
       <div class="input-group">
         {{ search_form|crispy }}
