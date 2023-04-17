@@ -7,13 +7,12 @@
     <div class="d-flex justify-content-end mb-4">
       <a href="{% url 'restaurant:dish-type-list-create' %}" class="btn btn-primary text-white">Add New Dish Type</a>
     </div>
-</div>
     <form action="" method="get" class="form-inline mb-4">
       <div class="input-group">
         {{ search_form|crispy }}
         <div class="input-group-append">
-          <button type="submit" class="btn btn-secondary">
-            <i class="bi bi-search"></i>
+          <button type="submit" class="btn btn-behance">
+            <i class="bi bi-search">🔍</i>
           </button>
         </div>
       </div>
@@ -39,7 +38,8 @@
                 </a>
               </td>
               <td class="text-center">
-                <a href="{% url 'restaurant:dish-type-list-update' pk=dish_type.id %}" class="btn btn-primary btn-sm">
+                <a href="{% url 'restaurant:dish-type-list-update' pk=dish_type.id %}"
+                   class="btn btn-primary btn-sm text-white">
                   Edit
                 </a>
               </td>
