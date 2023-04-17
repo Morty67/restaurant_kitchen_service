@@ -30,8 +30,8 @@ python manage.py runserver
 *  Assign chefs to specific dishes
 
 ## Demo
-![demo.png](demo.png)
-![demo2.png](demo2.png)
-![new_cook.png](new_cook.png)
-![list_cooks](list_cooks.png)
-![admin.png](admin.png)
+![demo.png](demo/demo.png)
+![demo2.png](demo/demo2.png)
+![new_cook.png](demo/new_cook.png)
+![list_cooks](demo/list_cooks.png)
+![admin.png](demo/admin.png)
