@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container py-5">
+    <h1>Ingredient Detail: {{ ingredient }}</h1>
+    <a href="{% url 'restaurant:ingredient-update' pk=ingredient.id %}" class="btn btn-danger link-to-page mb-4">
+      Update
+    </a>
+
+    <h2>Dishes that use {{ ingredient }}:</h2>
+    <ul>
+      {% for dish in ingredient.dishes.all %}
+        <li>{{ dish.name }}</li>
+      {% endfor %}
+    </ul>
+
+    <div class="mt-5">
+      <a href="{% url 'restaurant:ingredient-list' %}" class="btn btn-primary">Back to Ingredients</a>
+    </div>
+  </div>
+{% endblock %}

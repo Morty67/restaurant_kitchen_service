@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card mt-5">
+        <div class="card-header bg-primary text-white d-flex justify-content-center align-items-center header-custom">Logged out!</div>
+        <div class="card-body text-dark">
+          <p>You have successfully logged out of your account.</p>
+          <a href="{% url 'login' %}" class="btn btn-lg btn-outline-primary rounded-pill btn-custom">Login Again</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+<style>
+.card {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-body {
+  font-size: 1.2rem;
+}
+
+.btn-custom {
+  background-color: green;
+  color: white;
+}
+
+.header-custom {
+  font-size: 2rem;
+  text-align: center;
+}
+body {
+  background-image: url('/static/img/login_back.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+{% endblock %}

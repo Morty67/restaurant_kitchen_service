@@ -1,0 +1,270 @@
+{% load static %}
+<!-- Navbar -->
+<div class="container position-sticky z-index-sticky top-0">
+  <div class="row">
+    <div class="col-12">
+      <nav
+          class="navbar navbar-expand-lg  blur blur-rounded top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+        <div class="container-fluid px-0">
+          <a class="navbar-brand font-weight-bolder ms-sm-1"
+             href="/" rel="tooltip"
+             title="Restaurant Kitchen Service" data-placement="bottom">
+            Restaurant Kitchen Service
+          </a>
+          <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+                  aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon mt-2">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+            </span>
+          </button>
+          <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
+            <ul class="navbar-nav navbar-nav-hover ms-lg-12 ps-lg-5 w-100">
+              <li class="nav-item dropdown dropdown-hover mx-2">
+                <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                   href="javascript:" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+                  Cooks
+                  <img src="{% static 'img/down-arrow-dark.svg' %}" alt="down-arrow" class="arrow ms-1"/>
+                </a>
+                <ul
+                    class="dropdown-menu dropdown-menu-animation dropdown-lg dropdown-lg-responsive p-3 border-radius-lg mt-0 mt-lg-3"
+                    aria-labelledby="dropdownMenuBlocks">
+                  <div class="d-none d-lg-block">
+                    <li class="">
+                      <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'restaurant:cook-list' %}">
+                        <div class="d-flex">
+                          <div class="icon h-10 me-3 d-flex mt-1">
+                            <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                          </div>
+                          <div class="w-100 d-flex align-items-center justify-content-between">
+                            <div>
+                              <h6
+                                  class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+                                List of chefs</h6>
+                            </div>
+                            <img src="{% static 'img/down-arrow.svg' %}" alt="down-arrow" class="arrow">
+                          </div>
+                        </div>
+                      </a>
+                      <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                      </div>
+                    </li>
+                    <div class="d-none d-lg-block">
+                      <li class="">
+                        <a class="dropdown-item py-2 ps-3 border-radius-md"
+                           href="{% url 'restaurant:cook-create' %}">
+                          <div class="d-flex">
+                            <div class="icon h-10 me-3 d-flex mt-1">
+                              <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                            </div>
+                            <div class="w-100 d-flex align-items-center justify-content-between">
+                              <div>
+                                <h6
+                                    class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+                                  Create a new cook</h6>
+                              </div>
+                              <img src="{% static 'img/down-arrow.svg' %}" alt="down-arrow" class="arrow">
+                            </div>
+                          </div>
+                        </a>
+                        <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <li class="nav-item dropdown dropdown-hover mx-2">
+                <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                   href="javascript:" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+                  Types
+                  <img src="{% static 'img/down-arrow-dark.svg' %}" alt="down-arrow" class="arrow ms-1"/>
+                </a>
+                <ul
+                    class="dropdown-menu dropdown-menu-animation dropdown-lg dropdown-lg-responsive p-3 border-radius-lg mt-0 mt-lg-3"
+                    aria-labelledby="dropdownMenuBlocks">
+                  <div class="d-none d-lg-block">
+                    <li class="">
+                      <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'restaurant:dish-type-list' %}">
+                        <div class="d-flex">
+                          <div class="icon h-10 me-3 d-flex mt-1">
+                            <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                          </div>
+                          <div class="w-100 d-flex align-items-center justify-content-between">
+                            <div>
+                              <h6
+                                  class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+                                List of all types of dishes</h6>
+                            </div>
+                            <img src="{% static 'img/down-arrow.svg' %}" alt="down-arrow" class="arrow">
+                          </div>
+                        </div>
+                      </a>
+                      <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                      </div>
+                    </li>
+                    <div class="d-none d-lg-block">
+                      <li class="">
+                        <a class="dropdown-item py-2 ps-3 border-radius-md"
+                           href="{% url 'restaurant:dish-type-list-create' %}">
+                          <div class="d-flex">
+                            <div class="icon h-10 me-3 d-flex mt-1">
+                              <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                            </div>
+                            <div class="w-100 d-flex align-items-center justify-content-between">
+                              <div>
+                                <h6
+                                    class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+                                  Create a new type of dish</h6>
+                              </div>
+                              <img src="{% static 'img/down-arrow.svg' %}" alt="down-arrow" class="arrow">
+                            </div>
+                          </div>
+                        </a>
+                        <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <li class="nav-item dropdown dropdown-hover mx-2">
+                <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                   href="javascript:" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dishes
+                  <img src="{% static 'img/down-arrow-dark.svg' %}" alt="down-arrow" class="arrow ms-1"/>
+                </a>
+                <ul
+                    class="dropdown-menu dropdown-menu-animation dropdown-lg dropdown-lg-responsive p-3 border-radius-lg mt-0 mt-lg-3"
+                    aria-labelledby="dropdownMenuBlocks">
+                  <div class="d-none d-lg-block">
+                    <li class="">
+                      <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'restaurant:dish-list' %}">
+                        <div class="d-flex">
+                          <div class="icon h-10 me-3 d-flex mt-1">
+                            <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                          </div>
+                          <div class="w-100 d-flex align-items-center justify-content-between">
+                            <div>
+                              <h6
+                                  class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+                                List of all dishes</h6>
+                            </div>
+                            <img src="{% static 'img/down-arrow.svg' %}" alt="down-arrow" class="arrow">
+                          </div>
+                        </div>
+                      </a>
+                      <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                      </div>
+                    </li>
+                    <div class="d-none d-lg-block">
+                      <li class="">
+                        <a class="dropdown-item py-2 ps-3 border-radius-md"
+                           href="{% url 'restaurant:dish-create' %}">
+                          <div class="d-flex">
+                            <div class="icon h-10 me-3 d-flex mt-1">
+                              <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                            </div>
+                            <div class="w-100 d-flex align-items-center justify-content-between">
+                              <div>
+                                <h6
+                                    class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+                                  Create a new dish</h6>
+                              </div>
+                              <img src="{% static 'img/down-arrow.svg' %}" alt="down-arrow" class="arrow">
+                            </div>
+                          </div>
+                        </a>
+                        <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <li class="nav-item dropdown dropdown-hover mx-2">
+                <a class="nav-link ps-2 d-flex justify-content-between cursor-pointer align-items-center"
+                   href="javascript:" id="dropdownMenuBlocks" data-bs-toggle="dropdown" aria-expanded="false">
+                  Ingredients
+                  <img src="{% static 'img/down-arrow-dark.svg' %}" alt="down-arrow" class="arrow ms-1"/>
+                </a>
+                <ul
+                    class="dropdown-menu dropdown-menu-animation dropdown-lg dropdown-lg-responsive p-3 border-radius-lg mt-0 mt-lg-3"
+                    aria-labelledby="dropdownMenuBlocks">
+                  <div class="d-none d-lg-block">
+                    <li class="">
+                      <a class="dropdown-item py-2 ps-3 border-radius-md" href="{% url 'restaurant:ingredient-list' %}">
+                        <div class="d-flex">
+                          <div class="icon h-10 me-3 d-flex mt-1">
+                            <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                          </div>
+                          <div class="w-100 d-flex align-items-center justify-content-between">
+                            <div>
+                              <h6
+                                  class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+                                List of all ingredients</h6>
+                            </div>
+                            <img src="{% static 'img/down-arrow.svg' %}" alt="down-arrow" class="arrow">
+                          </div>
+                        </div>
+                      </a>
+                      <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                      </div>
+                    </li>
+                    <div class="d-none d-lg-block">
+                      <li class="">
+                        <a class="dropdown-item py-2 ps-3 border-radius-md"
+                           href="{% url 'restaurant:ingredient-create' %}">
+                          <div class="d-flex">
+                            <div class="icon h-10 me-3 d-flex mt-1">
+                              <i class="ni ni-single-copy-04 text-gradient text-primary"></i>
+                            </div>
+                            <div class="w-100 d-flex align-items-center justify-content-between">
+                              <div>
+                                <h6
+                                    class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">
+                                  Create a new ingredient</h6>
+                              </div>
+                              <img src="{% static 'img/down-arrow.svg' %}" alt="down-arrow" class="arrow">
+                            </div>
+                          </div>
+                        </a>
+                        <div class="dropdown-menu mt-0 py-3 px-2 mt-3">
+                        </div>
+                      </li>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              {% if request.user.is_authenticated %}
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link nav-link-icon me-2"
+                     href="{% url 'logout' %}">
+                    <i class="fa fa-sign-out me-1"></i>
+                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip"
+                       data-bs-placement="bottom" title="Logout">Logout</p>
+                  </a>
+                </li>
+              {% else %}
+                <li class="nav-item ms-lg-auto">
+                  <a class="nav-link nav-link-icon me-2"
+                     href="{% url 'login' %}">
+                    <i class="fa fa-sign-in me-1"></i>
+                    <p class="d-inline text-sm z-index-1 font-weight-bold" data-bs-toggle="tooltip"
+                       data-bs-placement="bottom" title="Login">Login</p>
+                  </a>
+                </li>
+              {% endif %}
+              <li class="nav-item my-auto ms-3 ms-lg-0">
+                <a href="https://github.com/Morty67" target="_blank"
+                   class="btn btn-sm  bg-gradient-primary  btn-round mb-0 me-1 mt-2 mt-md-0">my github</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
